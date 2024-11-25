@@ -1,14 +1,12 @@
 "use client";
-import { useActionState } from "react";
 
-export default function SubmitMealsFormButton() {
-  const { pending } = useActionState();
+export default function SubmitMealsFormButton({ pending }) {
   return (
     <button
       type="submit"
       disabled={pending}
     >
-      {peding ? "Submiting..." : "Share Meal"}
+      Enviar
     </button>
   );
 }

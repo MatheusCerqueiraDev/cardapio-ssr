@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Suspense } from "react";
 import MealsLoadingComponent from "./loadingMeal";
 import classes from "./meals.module.css";
 
@@ -13,20 +12,16 @@ export default function MealsPage() {
     <>
       <header className={classes.header}>
         <h1>
-          Delicious meals, created {""}
-          <span className={classes.highlight}>by you</span>
+          Receitas deliciosas, criadas {""}
+          <span className={classes.highlight}>por você</span>
         </h1>
-        <p>Choose you favorite recipe and cook it yourself</p>
+        <p>Escolha seu prato, ingredientes e mãos a massa!</p>
         <p className={classes.cta}>
-          <Link href="/meals/share">Share Your Recipe</Link>
+          <Link href="/meals/share">Crie sua receita</Link>
         </p>
       </header>
       <main className={classes.main}>
-        <Suspense
-          fallback={<p className={classes.loading}>Fetching meals...</p>}
-        >
-          <MealsLoadingComponent />
-        </Suspense>
+        <MealsLoadingComponent />
       </main>
     </>
   );

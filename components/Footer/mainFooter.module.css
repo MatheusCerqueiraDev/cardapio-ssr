@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+
+  background-color: #8f3a09;
+
+  color: #ddd6cb;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 2rem 10%;
+  }
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.footer a {
+  color: #ddd6cb;
+  font-size: 1.5rem;
+  text-decoration: none;
+}

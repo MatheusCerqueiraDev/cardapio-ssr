@@ -17,19 +17,19 @@ export default function Header() {
         >
           <Image
             src={logoImg}
-            alt="A plate weith food on it"
+            alt="receitas.com logo"
             priority
           />
-          NextLevel food
+          Receitas.com
         </Link>
 
         <nav className={classes.nav}>
           <ul>
             <li>
-              <NavLink href="/meals">Meals page</NavLink>
+              <NavLink href="/meals">Receitas</NavLink>
             </li>
             <li>
-              <NavLink href="/community">Foodies community</NavLink>
+              <NavLink href="/community">Comunidade</NavLink>
             </li>
           </ul>
         </nav>

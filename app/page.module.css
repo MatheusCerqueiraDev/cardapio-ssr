@@ -6,6 +6,11 @@
   max-width: 75rem;
 }
 
+.body {
+  height: 100%;
+  width: 100%;
+}
+
 .slideshow {
   width: 40rem;
   height: 25rem;

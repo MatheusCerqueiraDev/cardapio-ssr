@@ -11,31 +11,32 @@ export default function Home() {
         </div>
         <div>
           <div className={classes.hero}>
-            <h1>NextLevel Food for NextLevel Foodies</h1>
-            <p>Taste & share food from all over the world.</p>
+            <h1>Receitas.com</h1>
+            <p>Receitas .com facilidade</p>
           </div>
           <div className={classes.cta}>
-            <Link href="/community">Join the community</Link>
-            <Link href="/melas">Explore Meals</Link>
+            <Link href="/community">Entre na comunidade</Link>
+            <Link href="/melas">Explore receitas</Link>
           </div>
         </div>
       </header>
       <main>
         <section className={classes.section}>
-          <h2>How it works</h2>
+          <h2>Como funciona</h2>
           <p>
-            NextLevel Food is a platform for foodies to share their favorite
-            recipes with the world. It&apos;s a place to discover new dishes,
-            and to connect with other food lovers.
+            Recitas.com é uma plataforma para a comunidade de cozinheiros
+            compartilhar suas receitas. É também um lugar para descobrir novos
+            pratos.
           </p>
           <p>
-            NextLevel Food is a place to discover new dishes, and to connect
-            with other food lovers.
+            Recitas.com é um lugar para você se conectar com outros amantes da
+            culinaria ou conseguir uma receita receitas com os ingredientes
+            disponíveis na sua casa.
           </p>
         </section>
 
         <section className={classes.section}>
-          <h2>Why NextLevel Food?</h2>
+          <h2>Por que Recitas.com?</h2>
           <p>
             NextLevel Food is a platform for foodies to share their favorite
             recipes with the world. It&apos;s a place to discover new dishes,
