@@ -1,7 +1,13 @@
 "use client";
 import SubmitMealsFormButton from "@/components/Meals/MealsForm";
+import {
+  showErrorToast,
+  showSuccessToast,
+} from "@/components/Toasts/toastNotifications";
 import { CategoriasReceitas } from "@/lib/enums";
+import { postMeal } from "@/service/meals.service";
 import { debounce } from "lodash";
+import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import * as Yup from "yup";
 import classes from "./page.module.css";
@@ -9,26 +15,28 @@ import classes from "./page.module.css";
 const formSchema = Yup.object().shape({
   author: Yup.string().required("Author is required"),
   name: Yup.string().required("Recipe name is required"),
-  title: Yup.string().required("Title is required"),
   ingredients: Yup.string().required("Ingredients are required"),
-  instructions: Yup.string().required("Instructions are required"),
+  instruction1: Yup.string().required("Instructions are required"),
   category: Yup.string()
     .oneOf(Object.values(CategoriasReceitas), "Invalid category")
     .required("Category is required"),
-  image: Yup.string().url("Invalid URL").required("Image URL is required"),
 });
 
 export default function ShareMealPage() {
+  const router = useRouter();
   const [formContent, setFormContent] = useState({
-    author: "",
     name: "",
-    title: "",
+    author: "",
     ingredients: "",
-    instructions: "",
-    image: "",
+    instruction1: "",
+    category: Object.values(CategoriasReceitas)[0],
   });
 
-  console.log(formContent);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const clearForm = () => {
+    setFormContent({});
+  };
 
   const handleInputChange = (value, key) => {
     setFormContent((prev) => {
@@ -46,11 +54,20 @@ export default function ShareMealPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
       await formSchema.validate(formContent, { abortEarly: false });
-      showSuccessToast("Receita criada com sucesso!");
+      const response = await postMeal(formContent);
+      if (response.status === 200) {
+        clearForm();
+        showSuccessToast("Receita criada com sucesso!");
+        router.push("/meals");
+      }
     } catch (err) {
       showErrorToast("Por favor revise os campos do formulário");
+      console.error(err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -98,20 +115,6 @@ export default function ShareMealPage() {
             </p>
           </div>
           <p>
-            <label htmlFor="title">
-              Titulo <span className={classes.required}>*</span>
-            </label>
-            <input
-              type="text"
-              id="title"
-              name="title"
-              required
-              onChange={(e) =>
-                debouncedHandleInputChange(e.target.value, "title")
-              }
-            />
-          </p>
-          <p>
             <label htmlFor="ingredients">
               Ingredientes <span className={classes.required}>*</span>
             </label>
@@ -127,7 +130,7 @@ export default function ShareMealPage() {
           </p>
           <p>
             <label htmlFor="instructions">
-              Instructions <span className={classes.required}>*</span>
+              Instruções <span className={classes.required}>*</span>
             </label>
             <textarea
               id="instructions"
@@ -135,7 +138,7 @@ export default function ShareMealPage() {
               rows="10"
               required
               onChange={(e) =>
-                debouncedHandleInputChange(e.target.value, "instructions")
+                debouncedHandleInputChange(e.target.value, "instruction1")
               }
             ></textarea>
           </p>
@@ -157,18 +160,14 @@ export default function ShareMealPage() {
                   key={category}
                   value={category}
                 >
-                  {category}
+                  {category.replace(/_/g, " ")}
                 </option>
               ))}
             </select>
           </p>
-          {/* <ImagePicker
-            name="image"
-            label="your image"
-          /> */}
           {/* {currentState.message && <p>{currentState.message}</p>} */}
           <p className={classes.actions}>
-            <SubmitMealsFormButton pending={false} />
+            <SubmitMealsFormButton pending={isLoading} />
           </p>
         </form>
       </main>

@@ -1,4 +1,4 @@
-import logoImg from "@/assets/logo.png";
+import logoImg from "@/assets/receitascom.png";
 import Image from "next/image";
 import Link from "next/link";
 import HeaderBackground from "../HeaderBackground";
@@ -11,18 +11,19 @@ export default function Header() {
       <HeaderBackground />
 
       <header className={classes.header}>
-        <Link
-          href="/"
-          className={classes.logo}
-        >
-          <Image
-            src={logoImg}
-            alt="receitas.com logo"
-            priority
-          />
-          Receitas.com
-        </Link>
-
+        <div className={classes.main}>
+          <Link
+            href="/"
+            className={classes.logo}
+          >
+            <Image
+              src={logoImg}
+              alt="receitas.com logo"
+              priority
+            />
+          </Link>
+          <div>aa</div>
+        </div>
         <nav className={classes.nav}>
           <ul>
             <li>

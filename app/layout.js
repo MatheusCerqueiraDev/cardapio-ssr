@@ -1,3 +1,4 @@
+import ContentWrapper from "@/components/ContentWrapper";
 import Header from "@/components/Header";
 import "./globals.css";
 
@@ -11,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Header />
-        {children}
+        <ContentWrapper>{children}</ContentWrapper>
         {/* <Footer /> */}
       </body>
     </html>

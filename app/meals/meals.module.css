@@ -1,3 +1,9 @@
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
 .header {
   gap: 3rem;
   margin: 3rem auto 5rem auto;
@@ -36,6 +42,8 @@
 .loading {
   text-align: center;
   animation: loading 1.2s ease-in-out infinite;
+
+  font-size: 3rem;
 }
 
 @keyframes loading {

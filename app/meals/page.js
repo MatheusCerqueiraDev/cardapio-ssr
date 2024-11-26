@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function MealsPage() {
   return (
-    <>
+    <div className={classes.contentWrapper}>
       <header className={classes.header}>
         <h1>
           Receitas deliciosas, criadas {""}
@@ -20,9 +20,9 @@ export default function MealsPage() {
           <Link href="/meals/share">Crie sua receita</Link>
         </p>
       </header>
-      <main className={classes.main}>
+      <main>
         <MealsLoadingComponent />
       </main>
-    </>
+    </div>
   );
 }

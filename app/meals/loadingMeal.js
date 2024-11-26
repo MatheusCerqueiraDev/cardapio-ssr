@@ -1,6 +1,7 @@
 "use client";
 import Meals from "@/components/Meals";
-import { Suspense, useEffect, useState } from "react";
+import { getAllMeals } from "@/service/meals.service";
+import { useEffect, useState } from "react";
 import classes from "./meals.module.css";
 
 export default function MealsLoadingComponent() {
@@ -12,14 +13,11 @@ export default function MealsLoadingComponent() {
     async function fetchData() {
       setIsLoading(true);
       try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/receitas/all`
-        );
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+        const response = await getAllMeals();
+        console.log(response);
+        if (response) {
+          setData(response.data);
         }
-        const recipets = await response.json();
-        setData(recipets);
       } catch (error) {
         setErrors(`Error fetching data: ${error.message}`);
       } finally {
@@ -35,13 +33,7 @@ export default function MealsLoadingComponent() {
   }
 
   if (isLoading) {
-    return (
-      <Suspense
-        fallback={<p className={classes.loading}>Carregando receitas...</p>}
-      >
-        <Meals meals={data} />
-      </Suspense>
-    );
+    return <p className={classes.loading}>Carregando receitas...</p>;
   }
 
   return <Meals meals={data} />;

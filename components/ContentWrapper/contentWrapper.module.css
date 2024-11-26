@@ -1,0 +1,9 @@
+.content {
+  padding: 2rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: 2rem 10%;
+  }
+}
