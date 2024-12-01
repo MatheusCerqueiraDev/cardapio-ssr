@@ -17,7 +17,7 @@ export default function MealsPage() {
         </h1>
         <p>Escolha seu prato, ingredientes e mãos a massa!</p>
         <p className={classes.cta}>
-          <Link href="/meals/share">Crie sua receita</Link>
+          <Link href="/receitas/share">Crie sua receita</Link>
         </p>
       </header>
       <main>

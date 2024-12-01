@@ -14,8 +14,21 @@
 .main {
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  gap: 2rem;
+
   width: 100%;
+}
+
+.searchInput {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #ddd6cb;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
 }
 
 .nav ul {
@@ -25,6 +38,7 @@
   display: flex;
   gap: 4rem;
   font-size: 1.25rem;
+  width: 100%;
 }
 
 .logo {

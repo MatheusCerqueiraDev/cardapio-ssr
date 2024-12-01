@@ -14,7 +14,7 @@ export default function MealItem({ name, summary, author }) {
       <div className={classes.content}>
         <p className={classes.summary}>{summary}</p>
         <div className={classes.actions}>
-          <Link href={`/meals/${name}`}>Veja Detalhes</Link>
+          <Link href={`/receitas/${name}`}>Veja Detalhes</Link>
         </div>
       </div>
     </article>

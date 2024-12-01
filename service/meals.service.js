@@ -22,3 +22,14 @@ export const postMeal = async (meal) => {
     },
   });
 };
+
+export const getByCategory = async (category) => {
+  return await axios.get(
+    `${process.env.NEXT_PUBLIC_API_URL}/receitas/searchByCategory`,
+    {
+      params: {
+        category: category,
+      },
+    }
+  );
+};

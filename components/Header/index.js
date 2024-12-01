@@ -22,16 +22,29 @@ export default function Header() {
               priority
             />
           </Link>
-          <div>aa</div>
+          <input
+            type="text"
+            placeholder="Search..."
+            className={classes.searchInput}
+          />
         </div>
         <nav className={classes.nav}>
           <ul>
             <li>
-              <NavLink href="/meals">Receitas</NavLink>
+              <NavLink href="/receitas">Receitas</NavLink>
             </li>
             <li>
-              <NavLink href="/community">Comunidade</NavLink>
+              <NavLink href="/aves">Aves</NavLink>
             </li>
+            <li>
+              <NavLink href="/carnes">Carnes</NavLink>
+            </li>
+            <li>
+              <NavLink href="/peixes">Peixes</NavLink>
+            </li>
+            {/* <li>
+              <NavLink href="/comunidade">Comunidade</NavLink>
+            </li> */}
           </ul>
         </nav>
       </header>
