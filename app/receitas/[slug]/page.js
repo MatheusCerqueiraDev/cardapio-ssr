@@ -7,5 +7,13 @@ export default function MealPage({ params }) {
     notFound();
   }
 
-  return <MealContent mealName={params.name} />;
+  return (
+    <MealContent
+      mealName={params.name}
+      author={params.author}
+      ingredients={params.ingredients}
+      instruction1={params.instruction1}
+      instruction2={params.instruction2}
+    />
+  );
 }
