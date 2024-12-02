@@ -37,13 +37,14 @@ export default function Home() {
         <section className={classes.section}>
           <h2>Por que Recitas.com?</h2>
           <p>
-            NextLevel Food is a platform for foodies to share their favorite
-            recipes with the world. It&apos;s a place to discover new dishes,
-            and to connect with other food lovers.
+            Nossa plataforma reune formas faceis de você encontrar sua receita
+            de hoje. Escolha pratos listados por cozinheiros, estudantes de
+            culinaria ou nossa comunidade!
           </p>
           <p>
-            NextLevel Food is a place to discover new dishes, and to connect
-            with other food lovers.
+            Receitas.com é um lugar para você se conectar com outros amantes da
+            culinaria ou conseguir uma receita receitas com os ingredientes
+            disponíveis na sua casa.
           </p>
         </section>
       </main>
