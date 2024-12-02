@@ -1,13 +1,7 @@
 .contentWrapper {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 64px;
-}
-
-@media (min-width: 768px) {
-  .contentWrapper {
-    flex-direction: column;
-  }
 }
 
 .header {

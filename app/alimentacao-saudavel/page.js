@@ -1,5 +1,5 @@
 import Link from "next/link";
-import AlimentosMealsLoadingComponent from "./loadingMeal";
+import AlimentosSaudaveisLoadingComponent from "./loadingMeal";
 import classes from "./meals.module.css";
 
 export const metadata = {
@@ -7,7 +7,7 @@ export const metadata = {
   description: "Browser the shared meals.",
 };
 
-export default function AvesPage() {
+export default function AlimentosSaudaveisPage() {
   return (
     <div className={classes.contentWrapper}>
       <header className={classes.header}>
@@ -21,7 +21,7 @@ export default function AvesPage() {
         </p>
       </header>
       <main>
-        <AlimentosMealsLoadingComponent />
+        <AlimentosSaudaveisLoadingComponent />
       </main>
     </div>
   );

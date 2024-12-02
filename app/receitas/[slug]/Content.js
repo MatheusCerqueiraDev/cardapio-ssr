@@ -13,18 +13,18 @@ export const MealContent = async ({ mealName }) => {
     <>
       <header className={classes.header}>
         <div className={classes.headerText}>
-          <h1>{meal.name}</h1>
-          <p className={classes.creator}>criado por {meal.author}</p>
-          <p className={classes.summary}>{meal.instruction1}</p>
+          <h1>{mealName}</h1>
+          <p className={classes.creator}>criado por {}</p>
+          <p className={classes.summary}></p>
         </div>
       </header>
       <main>
-        <p
+        {/* <p
           className={classes.instructions}
           dangerouslySetInnerHTML={{
             __html: meal.instruction1,
           }}
-        ></p>
+        ></p> */}
       </main>
     </>
   );

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import AlimentosMealsLoadingComponent from "./loadingMeal";
+import BebidasLoadingComponent from "./loadingMeal";
 import classes from "./meals.module.css";
 
 export const metadata = {
@@ -7,12 +7,12 @@ export const metadata = {
   description: "Browser the shared meals.",
 };
 
-export default function AvesPage() {
+export default function BebidasPage() {
   return (
     <div className={classes.contentWrapper}>
       <header className={classes.header}>
         <h1>
-          Receitas saudaveis, faceis e saborosas! {""}
+          Bebidas e Drinks, faceis e saborosos! {""}
           <span className={classes.highlight}>Criadas por você</span>
         </h1>
         <p>Escolha seu prato!</p>
@@ -21,7 +21,7 @@ export default function AvesPage() {
         </p>
       </header>
       <main>
-        <AlimentosMealsLoadingComponent />
+        <BebidasLoadingComponent />
       </main>
     </div>
   );

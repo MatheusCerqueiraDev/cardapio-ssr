@@ -2,18 +2,20 @@
   display: flex;
   gap: 3rem;
   margin: 3rem auto;
-  width: 90%;
-  max-width: 75rem;
-}
-
-.body {
-  height: 100%;
   width: 100%;
 }
 
 .slideshow {
-  width: 40rem;
-  height: 25rem;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .slideshow {
+    display: flex;
+
+    width: 40rem;
+    height: 25rem;
+  }
 }
 
 .hero {
@@ -40,7 +42,6 @@
 }
 
 .cta a {
-  display: inline-block;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -53,19 +54,6 @@
 .cta a:hover,
 .cta a:active {
   background: linear-gradient(90deg, #fd4715, #f9b241);
-}
-
-.cta a:first-child {
-  background: transparent;
-  font-weight: normal;
-  color: #ff9b05;
-  padding-left: 0;
-}
-
-.cta a:first-child:hover,
-.cta a:first-child:active {
-  background: transparent;
-  color: #f9b241;
 }
 
 .section {

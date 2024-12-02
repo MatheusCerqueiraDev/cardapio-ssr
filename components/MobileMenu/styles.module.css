@@ -1,0 +1,68 @@
+/* MobileMenu.module.css */
+.menuIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.menuIcon:hover {
+  background-color: #ffffff;
+}
+
+.menuIcon svg {
+  color: #888;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: radial-gradient(#282c34, #282c34);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+.drawerHeader {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}
+
+.closeIcon {
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.drawerNav {
+  padding: 16px;
+}
+
+.drawerNav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.drawerNav li {
+  margin-bottom: 16px;
+}
+
+.drawerNav li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+}

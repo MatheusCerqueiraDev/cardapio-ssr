@@ -5,7 +5,7 @@ import { getByCategory } from "@/service/meals.service";
 import { useEffect, useState } from "react";
 import classes from "./meals.module.css";
 
-export default function PeixesMealsLoadingComponent() {
+export default function BebidasLoadingComponent() {
   const [data, setData] = useState([]);
   const [errors, setErrors] = useState();
   const [isLoading, setIsLoading] = useState(false);
@@ -14,9 +14,7 @@ export default function PeixesMealsLoadingComponent() {
     async function fetchData() {
       setIsLoading(true);
       try {
-        const response = await getByCategory(
-          CategoriasReceitas.PEIXES_E_FRUTOS_DO_MAR
-        );
+        const response = await getByCategory(CategoriasReceitas.BEBIDAS);
         console.log(response);
         if (response) {
           setData(response.data);

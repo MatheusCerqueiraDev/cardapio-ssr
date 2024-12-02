@@ -15,8 +15,7 @@ export default function Home() {
             <p>Receitas .com facilidade</p>
           </div>
           <div className={classes.cta}>
-            <Link href="/community">Entre na comunidade</Link>
-            <Link href="/melas">Explore receitas</Link>
+            <Link href="/receitas">Explore receitas</Link>
           </div>
         </div>
       </header>

@@ -33,3 +33,11 @@ export const getByCategory = async (category) => {
     }
   );
 };
+
+export const getMealsSearch = async (params) => {
+  return await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/receitas/search`, {
+    params: {
+      query: params,
+    },
+  });
+};

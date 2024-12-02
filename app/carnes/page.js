@@ -7,7 +7,7 @@ export const metadata = {
   description: "Browser the shared meals.",
 };
 
-export default function AvesPage() {
+export default function CarnesPage() {
   return (
     <div className={classes.contentWrapper}>
       <header className={classes.header}>
