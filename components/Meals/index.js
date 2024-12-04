@@ -5,7 +5,7 @@ export default function Meals({ meals, isLoading }) {
   if (!meals) {
     return (
       <p className={classes.loading}>
-        Ainda nÃ£o existem receitas. Que tal criar a primeira!
+        Ainda não existem receitas. Que tal criar a primeira!
       </p>
     );
   }

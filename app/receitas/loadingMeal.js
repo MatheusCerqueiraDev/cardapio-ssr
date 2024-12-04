@@ -14,7 +14,6 @@ export default function MealsLoadingComponent() {
   const [errors, setErrors] = useState();
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log("fetching data");
   const fetchData = async () => {
     setIsLoading(true);
     try {

@@ -6,6 +6,7 @@ export default function MealPage({ params }) {
   if (!params) {
     notFound();
   }
+  console.log(params);
 
-  return <MealContent mealId={params.id} />;
+  return <MealContent mealId={params.slug} />;
 }
