@@ -5,7 +5,7 @@ export default function Meals({ meals, isLoading }) {
   if (!meals) {
     return (
       <p className={classes.loading}>
-        Ainda não existem receitas. Que tal criar a primeira!
+        Ainda nÃ£o existem receitas. Que tal criar a primeira!
       </p>
     );
   }
@@ -31,7 +31,10 @@ export default function Meals({ meals, isLoading }) {
           return (
             <li key={meal.id}>
               <MealItem
-                name={meal.name}
+                mealName={meal.name}
+                summary={meal.summary}
+                author={meal.author}
+                id={meal.id}
                 {...meal}
               />
             </li>

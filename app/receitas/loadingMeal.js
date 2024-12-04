@@ -14,11 +14,11 @@ export default function MealsLoadingComponent() {
   const [errors, setErrors] = useState();
   const [isLoading, setIsLoading] = useState(false);
 
-  async function fetchData() {
+  console.log("fetching data");
+  const fetchData = async () => {
     setIsLoading(true);
     try {
       const response = await getAllMeals();
-      console.log(response);
       if (response) {
         setData(response.data);
       }
@@ -27,9 +27,9 @@ export default function MealsLoadingComponent() {
     } finally {
       setIsLoading(false);
     }
-  }
+  };
 
-  async function fetchDataViaParams() {
+  const fetchDataViaParams = async () => {
     setIsLoading(true);
     try {
       const response = await getMealsSearch(search);
@@ -41,10 +41,9 @@ export default function MealsLoadingComponent() {
     } finally {
       setIsLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
-    console.log("search", search);
     if (!search) {
       fetchData();
     } else {

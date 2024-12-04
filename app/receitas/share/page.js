@@ -7,7 +7,7 @@ import {
 import { CategoriasReceitas } from "@/lib/enums";
 import { postMeal } from "@/service/meals.service";
 import { debounce } from "lodash";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useCallback, useState } from "react";
 import * as Yup from "yup";
 import classes from "./page.module.css";
@@ -23,7 +23,7 @@ const formSchema = Yup.object().shape({
 });
 
 export default function ShareMealPage() {
-  const router = useRouter();
+  const router = usePathname();
   const [formContent, setFormContent] = useState({
     name: "",
     author: "",

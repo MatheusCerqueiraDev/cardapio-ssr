@@ -41,3 +41,9 @@ export const getMealsSearch = async (params) => {
     },
   });
 };
+
+export const getMealById = async (params) => {
+  return await axios.get(
+    `${process.env.NEXT_PUBLIC_API_URL}/receitas/${params}`
+  );
+};

@@ -3,7 +3,7 @@ import logoImg from "@/assets/receitascom.png";
 import { debounce } from "lodash";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useCallback, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import HeaderBackground from "../HeaderBackground";
@@ -12,7 +12,7 @@ import classes from "./mainHeader.module.css";
 
 export default function Header() {
   const searchParams = useSearchParams();
-  const router = useRouter();
+  const router = usePathname();
   const search = searchParams.get("search");
 
   const [searchQuery, setSearchQuery] = useState(search ?? "");
@@ -27,6 +27,7 @@ export default function Header() {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const debouncedHandleInputChange = useCallback(
     debounce(() => handleSearch(), 600),
     []
@@ -117,11 +118,11 @@ export default function Header() {
             <li>
               <NavLink href="/receitas">Receitas</NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink href="/alimentacao-saudavel">
                 Alimentação saúdavel
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink href="/aves">Aves</NavLink>
             </li>
