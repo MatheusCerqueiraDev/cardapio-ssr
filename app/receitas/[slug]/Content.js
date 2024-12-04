@@ -37,13 +37,15 @@ export const MealContent = ({ mealId }) => {
     return <p>{errors}</p>;
   }
 
+  console.log(data);
   return (
     <>
       <header className={classes.header}>
         <div className={classes.headerText}>
-          <h1>{data?.mealName}</h1>
-          <p className={classes.creator}>criado por {data?.author}</p>
+          <h1>{data?.name}</h1>
           <p className={classes.summary}>{data?.ingredients}</p>
+          <p className={classes.instructions}>{data.instruction1}</p>
+          <p className={classes.creator}>criado por {data?.author}</p>
         </div>
       </header>
     </>
